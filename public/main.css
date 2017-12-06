@@ -14,3 +14,16 @@ input{
 .beers{
   padding: 5px;
 }
+
+table th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+
+table tr {
+  border: 1px solid black;
+}
