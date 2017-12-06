@@ -4,14 +4,24 @@
     <title>BrewDog Beers</title>
     <link rel="stylesheet" type="text/css" href="main.css">
     <script src='app.js'></script>
-    <script src="https://api.punkapi.com/v2/beers"></script>
   </head>
   <body>
     <main>
     <div id="beers">
       <h1>Beer List</h1>
-        <select id="beer-list"></select>
+        <select id="beer-list">
+          <option disabled selected>
+
+            Pick a beer!
+          </option>
+        </select>
       </div>
     </main>
+    <div id="beer-details">
+      <p id="beer-name"></p>
+      <div id='beer-image'>
+
+      </div>
+    </div>
   </body>
 </html>
