@@ -33,7 +33,27 @@ var populateList = function(beers){
 var beerInfo = function(beer){
   this.setElementAndSetContent('beer-details', beer.name, 0, 'beer-name')
   this.setImage('beer-details', "<img src=" + beer.image_url + " style='height: 250px'>", 0, 'beer-image')
+    this.setElementAndSetContent('beer-details', "Malts: " + beerIngredientsMalt(beer), 0, 'malt')
+    this.setElementAndSetContent('beer-details', "Hops: " + beerIngredientsHops(beer), 0, 'hops')
+    this.setElementAndSetContent('beer-details', "Yeast: " +beer.ingredients.yeast, 0, 'yeast')
+
 };
+
+var beerIngredientsMalt = function(beer){
+  maltIngredients = [];
+  for (var ingredient of beer.ingredients.malt) {
+    maltIngredients.push(" " + ingredient.name);
+  }
+  return maltIngredients
+}
+
+var beerIngredientsHops = function(beer){
+  hopsIngredients = [];
+  for (var ingredient of beer.ingredients.hops) {
+    hopsIngredients.push(" " + ingredient.name + "(" + ingredient.attribute + ")");
+  }
+  return hopsIngredients
+}
 
 // DRY catch-all element creator and setter
 var createElementAndSetContent = function(parentElement, content, index, elementType){
